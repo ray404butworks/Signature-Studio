@@ -1,5 +1,13 @@
 # 第三方许可
 
+## 静态签名字体（Phase 02）
+
+Ma Shan Zheng、Long Cang、Zhi Mang Xing、Caveat、Dancing Script、Pacifico 来自 Google Fonts 官方仓库，均为 SIL OFL 1.1。各字体的 `OFL.txt` 和 `NOTICE.txt` 位于 `public/fonts/<id>/`，会随网站构建一同分发。精确来源提交、原文件 SHA-256、衍生文件 SHA-256、版权声明见 `public/fonts/catalog.json`。
+
+WOFF2 为本项目转换的衍生版本；变量字体固定为 400 字重。完整字体保留上游 cmap 字符集合；选择器另用仅含“林雨晴”或“Vivian”的小型子集。所有衍生字体使用独立内部名称，Dancing Script 改为 `Signature Studio DS`（样本为 `Signature Studio DS Sample`），避免使用其 Reserved Font Name 作为修改版本的主字体名。界面显示原字体名称用于说明来源。
+
+OFL 允许商业使用、网页嵌入及随 Android App 内置/分发。分发时须保留版权与 OFL 原文，字体仍按 OFL 发布，不可将字体单独出售；保留名称限制同样适用于未来转换或子集。构建工具与复现方式见 `PHASE02.md`。
+
 本项目使用下列运行时组件和界面资产。各组件保留其原有版权和许可，项目 MIT 许可不替代第三方内容的权利。
 
 | 组件 | 许可 | 许可全文 |

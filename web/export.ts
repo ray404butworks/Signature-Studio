@@ -1,4 +1,4 @@
-import {canvasSize,validateConfig,type WebConfig} from './model';
+import {canvasSize,hasStaticFonts,validateConfig,type WebConfig} from './model';
 import {prepareScene,renderScene} from './renderer';
 import {cancelled,prepareAudio,withCancellation} from './audio';
 
@@ -17,6 +17,7 @@ export type ExportOptions={
 };
 
 async function detectSupport(config:WebConfig,withAudio:boolean):Promise<EncoderSupport>{
+  if(hasStaticFonts(config))return {supported:false,reason:'静态字体暂不支持 MP4 导出，请切换为动态笔迹。'};
   if(typeof document==='undefined'||!globalThis.isSecureContext){
     return {supported:false,reason:'视频导出需要 HTTPS 网站或本机 localhost 页面。'};
   }

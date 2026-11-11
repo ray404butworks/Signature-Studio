@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mashanzheng",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/mashanzheng/MaShanZheng-Regular.ttf",
+    "sourceSha256": "6D2546BB189C732A8CA29AF9E22457B152387D158AA459E4AC2CE1E51788B7FB",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/mashanzheng/OFL.txt",
+    "copyright": "Copyright 2018 The Ma Shan Zheng Project Authors (https://github.com/googlefonts/mashanzheng)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+  },
+  {
+    "id": "longcang",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/longcang/LongCang-Regular.ttf",
+    "sourceSha256": "E5BF2C3F24EF2327C6F136D8F73E2F9DFDF44896FDBEB35A9515F44777BB91BC",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/longcang/OFL.txt",
+    "copyright": "Copyright 2018 The Long Cang Project Authors (https://github.com/googlefonts/longcang)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+  },
+  {
+    "id": "zhimangxing",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+    "sourceSha256": "644E0CAE9B40F0B10AB729A01BD32032E3973BAC22BE3DCCAE01BF6AE7FDE969",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/zhimangxing/OFL.txt",
+    "copyright": "Copyright 2018 The Zhi Mang Xing Project Authors (https://github.com/googlefonts/zhimangxing)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+  },
+  {
+    "id": "caveat",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/caveat/Caveat%5Bwght%5D.ttf",
+    "sourceSha256": "0BDB6B660482D31531B3945849FBA5916B3EF8695DA7024A9E6B9EE3C4157988",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/caveat/OFL.txt",
+    "copyright": "Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+  },
+  {
+    "id": "dancingscript",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/dancingscript/DancingScript%5Bwght%5D.ttf",
+    "sourceSha256": "21808625578FE8D8CD10CB684BE546DCA077B27CD03A53A2F1EC11DC743C924C",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/dancingscript/OFL.txt",
+    "copyright": "Copyright 2016 The Dancing Script Project Authors (https://github.com/googlefonts/DancingScript), with Reserved Font Name 'Dancing Script'.",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+  },
+  {
+    "id": "pacifico",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/pacifico/Pacifico-Regular.ttf",
+    "sourceSha256": "5B6C0D5334A7BF77DEA52B975C5A0C408878C0F7115ED5B6FB151F634B7BF701",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/pacifico/OFL.txt",
+    "copyright": "Copyright 2018 The Pacifico Project Authors (https://github.com/googlefonts/Pacifico)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+  }
+]

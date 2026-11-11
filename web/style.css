@@ -5,6 +5,18 @@
   font-style: normal;
   font-display: swap;
 }
+.font-picker { display: grid; gap: 10px; min-width: 0; }
+.font-picker-trigger { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; text-align: left; background: var(--paper); }
+.font-picker-trigger > :last-child { margin-left: auto; }
+.font-mode { flex-shrink: 0; font-size: 11px; color: var(--accent-strong); background: var(--accent-wash); border-radius: 5px; padding: 3px 6px; }
+.font-options { display: grid; gap: 4px; }
+.font-group-label { display: block; font-size: 11px; color: var(--muted); margin: 12px 4px 6px; }
+.font-option { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; min-height: 54px; padding: 8px 10px; border: 1px solid transparent; border-radius: 8px; text-align: left; }
+.font-option:hover, .font-option[aria-pressed='true'] { background: var(--accent-wash); border-color: var(--line); }
+.font-option strong { display: block; font-size: 12px; font-weight: 500; }
+.font-option small { display: block; font-size: 10px; color: var(--muted); margin-top: 3px; }
+.font-option-sample { font-size: 26px; line-height: 1.6; white-space: nowrap; }
+.font-load-status { min-height: 38px; }
 :root {
   --font-ui: 'Geist', 'Microsoft YaHei UI', 'PingFang SC', sans-serif;
   --accent: #b154f9;

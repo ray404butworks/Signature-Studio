@@ -2,18 +2,26 @@ import {z} from 'zod';
 import type {SignatureConfig} from '../src/config';
 import defaultDesign from './default-design.json';
 import {STORED_DECORATION_IDS} from './decoration-catalog';
+import {isStaticFont,staticFonts} from './font-catalog';
 
 const color = z.string().regex(/^#[\da-f]{6}$/i, '请选择有效的颜色');
 const finite = (min:number,max:number) => z.number().finite().min(min).max(max);
 export const fontFamilies = [
   {id:'tyx-brush',name:'TYX Brush · 原作连笔'},
+  ...staticFonts.map(font=>({id:font.id,name:font.name})),
 ] as const;
+export function nameProblem(name:string,family:string):string {
+  if(isStaticFont(family))return !name.trim()?'请输入姓名':/[\p{Cc}\p{Cf}]/u.test(name)?'姓名不能包含换行或控制字符':'';
+  if(!name||!/[a-z]/i.test(name))return '至少输入一个英文字母';
+  return /^[A-Za-z '\-]+$/.test(name)?'':'请使用英文字母、空格、英文撇号或连字符';
+}
+export const hasStaticFonts=(config:WebConfig)=>config.people.slice(0,config.mode==='couple'?2:1).some(person=>isStaticFont(person.font.family));
 export const personSchema = z.object({
   name:z.string().max(40,'最多输入 40 个字符'),
   // Retain old values when reading saved designs; the website uses the authored glyphs directly.
   scheme:z.enum(['classic','loop','sweep']).default('classic'),
   position:z.object({x:finite(-.45,.45),y:finite(-.45,.45),scale:finite(.45,1.5),rotation:finite(-20,20)}),
-  font:z.object({family:z.enum(['tyx-brush','tyx-soft']).default('tyx-brush'),size:finite(48,320),penWidth:finite(.5,2),pressure:finite(0,1),initialScale:finite(1,1.6),initialOffsetX:finite(-120,120),initialOffsetY:finite(-120,120),terminalLength:finite(.5,1.8)}),
+  font:z.object({family:z.string().refine(id=>id==='tyx-brush'||id==='tyx-soft'||isStaticFont(id),'请选择可用字体').default('tyx-brush'),size:finite(48,320),penWidth:finite(.5,2),pressure:finite(0,1),initialScale:finite(1,1.6),initialOffsetX:finite(-120,120),initialOffsetY:finite(-120,120),terminalLength:finite(.5,1.8)}),
   ink:z.object({color}),
   glow:z.object({enabled:z.boolean(),color,strength:finite(0,1),radius:finite(0,48)}),
   decoration:z.object({id:z.enum(STORED_DECORATION_IDS),scale:finite(.5,1.5),offsetX:finite(-.45,.45),offsetY:finite(-.45,.45),action:z.enum(['wink','none']),earFold:z.boolean(),playful:z.boolean().default(true)}),
@@ -32,16 +40,16 @@ export const webSchema = z.object({
 }).strict().superRefine((c,ctx)=>{
   for(let i=0;i<(c.mode==='couple'?2:1);i++){
     const name=c.people[i].name,prefix=c.mode==='couple'?`${i===0?'第一':'第二'}位：`:'';
-    if(!name||!/[a-z]/i.test(name))ctx.addIssue({code:'custom',path:['people',i,'name'],message:`${prefix}至少输入一个英文字母`});
-    else if(!/^[A-Za-z '\-]+$/.test(name))ctx.addIssue({code:'custom',path:['people',i,'name'],message:`${prefix}请使用英文字母、空格、英文撇号或连字符`});
+    const problem=nameProblem(name,c.people[i].font.family);
+    if(problem)ctx.addIssue({code:'custom',path:['people',i,'name'],message:`${prefix}${problem}`});
   }
   if(c.timing.duration-c.timing.hold<2)ctx.addIssue({code:'custom',path:['timing','hold'],message:'请为书写和收尾保留至少 2 秒，缩短定格或增加总时长'});
 });
 export type PersonConfig=z.infer<typeof personSchema>;
 export type WebConfig=z.infer<typeof webSchema>;
 export type Scheme=PersonConfig['scheme'];
-export const STORAGE_KEY='tyx-signature.website.v7';
-const LEGACY_STORAGE_KEYS=['tyx-signature.website.v6','tyx-signature.website.v5','tyx-signature.website.v4','tyx-signature.website.v3','tyx-signature.website.v2'];
+export const STORAGE_KEY='tyx-signature.website.v8';
+const LEGACY_STORAGE_KEYS=['tyx-signature.website.v7','tyx-signature.website.v6','tyx-signature.website.v5','tyx-signature.website.v4','tyx-signature.website.v3','tyx-signature.website.v2'];
 export const canvasSize=(aspect:WebConfig['canvas']['aspect']) => aspect==='portrait'?{width:1080,height:1920}:aspect==='square'?{width:1080,height:1080}:{width:1920,height:1080};
 
 export function defaultPerson(index=0):PersonConfig{
@@ -53,7 +61,7 @@ export function defaultWebConfig():WebConfig{
 function simplifyDesign(config:WebConfig):WebConfig{
   for(const person of config.people){
     person.scheme='classic';
-    person.font.family='tyx-brush';
+    if(person.font.family==='tyx-soft')person.font.family='tyx-brush';
     // Fold the previous two size controls into the sole scale value once.
     person.position.scale=clamp(person.position.scale*person.font.size/240,.45,1.5);
     person.font.size=240;
