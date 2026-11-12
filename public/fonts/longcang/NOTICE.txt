@@ -1,7 +1,10 @@
 Copyright 2018 The Long Cang Project Authors (https://github.com/googlefonts/longcang)
 
+Original font copyright metadata:
+Copyright 2018 The LongCang Project Authors (https://github.com/googlefonts/longcang)
+
 Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/longcang/LongCang-Regular.ttf
 License: SIL OFL 1.1, see OFL.txt.
-Derived WOFF2 names: Signature Studio Long Cang / Signature Studio Long Cang Sample.
+Derived internal names: Signature Studio Long Cang / Signature Studio Long Cang Sample.
 Weight instantiated at 400 where applicable. Full font retains upstream cmap.
 Sample subset contains only: 林雨晴

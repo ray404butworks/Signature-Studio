@@ -1,0 +1,11 @@
+Copyright (c) 2012, Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Names 'Sacramento'
+
+Original font copyright metadata:
+Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved
+Font Name "Sacramento"
+
+Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/sacramento/Sacramento-Regular.ttf
+License: SIL OFL 1.1, see OFL.txt.
+Derived internal names: Signature Studio SM / Signature Studio SM Sample.
+Weight instantiated at 400 where applicable. Full font retains upstream cmap.
+Sample subset contains only: Vivian

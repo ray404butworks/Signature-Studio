@@ -1,7 +1,10 @@
 Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)
 
+Original font copyright metadata:
+Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)
+
 Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/caveat/Caveat%5Bwght%5D.ttf
 License: SIL OFL 1.1, see OFL.txt.
-Derived WOFF2 names: Signature Studio Caveat / Signature Studio Caveat Sample.
+Derived internal names: Signature Studio Caveat / Signature Studio Caveat Sample.
 Weight instantiated at 400 where applicable. Full font retains upstream cmap.
 Sample subset contains only: Vivian

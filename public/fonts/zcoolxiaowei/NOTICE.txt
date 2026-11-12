@@ -1,0 +1,10 @@
+Copyright 2018 The ZCOOL XiaoWei Project Authors (https://github.com/googlefonts/zcool-xiaowei/)
+
+Original font copyright metadata:
+Copyright 2018 The ZCOOL XiaoWei Project Authors (https://www.github.com/googlefonts/xiaowei)
+
+Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf
+License: SIL OFL 1.1, see OFL.txt.
+Derived internal names: Signature Studio ZXW / Signature Studio ZXW Sample.
+Weight instantiated at 400 where applicable. Full font retains upstream cmap.
+Sample subset contains only: 林雨晴

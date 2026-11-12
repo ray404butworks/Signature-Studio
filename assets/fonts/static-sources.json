@@ -5,7 +5,18 @@
     "sourceSha256": "6D2546BB189C732A8CA29AF9E22457B152387D158AA459E4AC2CE1E51788B7FB",
     "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/mashanzheng/OFL.txt",
     "copyright": "Copyright 2018 The Ma Shan Zheng Project Authors (https://github.com/googlefonts/mashanzheng)",
-    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Ma Shan Zheng",
+    "language": "zh",
+    "style": "calligraphy",
+    "styleLabel": "中文书法",
+    "family": "Signature Studio Ma Shan Zheng",
+    "sampleText": "林雨晴",
+    "fallback": [],
+    "displayName": "马善政书法",
+    "format": "woff2",
+    "license": "OFL-1.1",
+    "licenseSha256": "d7bdb1cee215b689e23c2f95672a6084c790542170648267a55114103d756a08"
   },
   {
     "id": "longcang",
@@ -13,7 +24,18 @@
     "sourceSha256": "E5BF2C3F24EF2327C6F136D8F73E2F9DFDF44896FDBEB35A9515F44777BB91BC",
     "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/longcang/OFL.txt",
     "copyright": "Copyright 2018 The Long Cang Project Authors (https://github.com/googlefonts/longcang)",
-    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Long Cang",
+    "language": "zh",
+    "style": "handwriting",
+    "styleLabel": "中文手写",
+    "family": "Signature Studio Long Cang",
+    "sampleText": "林雨晴",
+    "fallback": [],
+    "displayName": "龙藏手写",
+    "format": "woff2",
+    "license": "OFL-1.1",
+    "licenseSha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc"
   },
   {
     "id": "zhimangxing",
@@ -21,7 +43,18 @@
     "sourceSha256": "644E0CAE9B40F0B10AB729A01BD32032E3973BAC22BE3DCCAE01BF6AE7FDE969",
     "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/zhimangxing/OFL.txt",
     "copyright": "Copyright 2018 The Zhi Mang Xing Project Authors (https://github.com/googlefonts/zhimangxing)",
-    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Zhi Mang Xing",
+    "language": "zh",
+    "style": "cursive",
+    "styleLabel": "中文草书",
+    "family": "Signature Studio Zhi Mang Xing",
+    "sampleText": "林雨晴",
+    "fallback": [],
+    "displayName": "Zhi Mang Xing 中文草书",
+    "format": "woff2",
+    "license": "OFL-1.1",
+    "licenseSha256": "10947328199e369a3e6b4a67e8e5507ed99d5bbb264a1f156415aa9b665e4d15"
   },
   {
     "id": "caveat",
@@ -29,7 +62,20 @@
     "sourceSha256": "0BDB6B660482D31531B3945849FBA5916B3EF8695DA7024A9E6B9EE3C4157988",
     "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/caveat/OFL.txt",
     "copyright": "Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)",
-    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Caveat",
+    "language": "en",
+    "style": "handwriting",
+    "styleLabel": "英文手写",
+    "family": "Signature Studio Caveat",
+    "sampleText": "Vivian",
+    "fallback": [
+      "mashanzheng"
+    ],
+    "displayName": "Caveat 手写",
+    "format": "woff2",
+    "license": "OFL-1.1",
+    "licenseSha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
   },
   {
     "id": "dancingscript",
@@ -37,7 +83,20 @@
     "sourceSha256": "21808625578FE8D8CD10CB684BE546DCA077B27CD03A53A2F1EC11DC743C924C",
     "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/dancingscript/OFL.txt",
     "copyright": "Copyright 2016 The Dancing Script Project Authors (https://github.com/googlefonts/DancingScript), with Reserved Font Name 'Dancing Script'.",
-    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Dancing Script",
+    "language": "en",
+    "style": "cursive",
+    "styleLabel": "英文连笔",
+    "family": "Signature Studio DS",
+    "sampleText": "Vivian",
+    "fallback": [
+      "mashanzheng"
+    ],
+    "displayName": "Dancing Script 连笔",
+    "format": "woff2",
+    "license": "OFL-1.1",
+    "licenseSha256": "6f090277c00af96651ce6dbcc38ff1591047a3bffef486e80b6a32e8276a8201"
   },
   {
     "id": "pacifico",
@@ -45,6 +104,139 @@
     "sourceSha256": "5B6C0D5334A7BF77DEA52B975C5A0C408878C0F7115ED5B6FB151F634B7BF701",
     "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/pacifico/OFL.txt",
     "copyright": "Copyright 2018 The Pacifico Project Authors (https://github.com/googlefonts/Pacifico)",
-    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a"
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Pacifico",
+    "language": "en",
+    "style": "display",
+    "styleLabel": "英文展示",
+    "family": "Signature Studio Pacifico",
+    "sampleText": "Vivian",
+    "fallback": [
+      "mashanzheng"
+    ],
+    "displayName": "Pacifico 展示",
+    "format": "woff2",
+    "license": "OFL-1.1",
+    "licenseSha256": "a47e5daeda73568969395c656823102678f2eefb0d7d7ecb47aac4cc17e42204"
+  },
+  {
+    "id": "lxgwwenkai",
+    "source": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/8afc526476c2811e2e90e765444e7a6e4a7ecf77/fonts/TTF/LXGWWenKai-Regular.ttf",
+    "sourceSha256": "2D73EEA94AD808999D90C0000C239A84A33B09D4BC6AB6C5B8BBF1EDA8A7FC8B",
+    "licenseSource": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/8afc526476c2811e2e90e765444e7a6e4a7ecf77/OFL.txt",
+    "licenseSha256": "1A25E35DA1031C6C3436FDE545BB9CB5ACA954E9873AFE510C834B8B79BD21A0",
+    "copyright": "Copyright 2021-2026 LXGW (https://github.com/lxgw/LxgwWenKai), with Reserved Font Name '霞鹜', '霞鶩', '落霞孤鹜', '落霞孤鶩' and 'LXGW'. [ADDITIONAL PERMISSION] The Reserved Font Names '霞鹜', '霞鶩', '落霞孤鹜', '落霞孤鶩' and 'LXGW' may continue to be used in Modified Versions recompiled from the Original Version, without modifications to the font source code; or in Modified Versions subsetted or converted to other formats (e.g., WOFF/WOFF2) solely for web font delivery, provided such Modified Versions are not made available as installable desktop fonts (e.g., on mainstream platforms like Google Fonts, or third-party non-commercial platforms recognized by the author @lxgw; other web font platforms please contact the author @lxgw for confirmation).\nCopyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)",
+    "commit": "8afc526476c2811e2e90e765444e7a6e4a7ecf77",
+    "name": "LXGW WenKai",
+    "displayName": "霞鹜文楷",
+    "language": "zh",
+    "style": "handwriting",
+    "styleLabel": "自然手写楷体",
+    "family": "Signature Studio WK",
+    "sampleText": "林雨晴",
+    "fallback": [],
+    "format": "woff2",
+    "license": "OFL-1.1"
+  },
+  {
+    "id": "notoserifsc",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "sourceSha256": "050080D9255A86808F2945BFFAC582B31EF32BC36411CE29563B4961670C66F9",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notoserifsc/OFL.txt",
+    "licenseSha256": "5E0DA210FB04058A8C0087985D2D456B931C2579811A49655721D3CF0C36B6D6",
+    "copyright": "Copyright 2012 Google Inc. All Rights Reserved.",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Noto Serif SC",
+    "displayName": "Noto 简体中文宋体",
+    "language": "zh",
+    "style": "serif",
+    "styleLabel": "中文衬线",
+    "family": "Signature Studio NSC",
+    "sampleText": "林雨晴",
+    "fallback": [],
+    "format": "woff2",
+    "license": "OFL-1.1"
+  },
+  {
+    "id": "zcoolxiaowei",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf",
+    "sourceSha256": "A42B620140F493DB42F741351DFBF343C0936D58588EE8004B8B2A218D997FF1",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/zcoolxiaowei/OFL.txt",
+    "licenseSha256": "A094514CA57CF8F9C5E8D8D1ADAB5D8CD3A377297FF016F9DF2C05B3ECD77F0A",
+    "copyright": "Copyright 2018 The ZCOOL XiaoWei Project Authors (https://github.com/googlefonts/zcool-xiaowei/)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "ZCOOL XiaoWei",
+    "displayName": "站酷小薇体",
+    "language": "zh",
+    "style": "display",
+    "styleLabel": "艺术中文",
+    "family": "Signature Studio ZXW",
+    "sampleText": "林雨晴",
+    "fallback": [],
+    "format": "woff2",
+    "license": "OFL-1.1"
+  },
+  {
+    "id": "sacramento",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/sacramento/Sacramento-Regular.ttf",
+    "sourceSha256": "9341FDA10ADBFEB7EFC94302B34507A3E227D7E7F5C432DF3F5AC8753FF73D24",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/sacramento/OFL.txt",
+    "licenseSha256": "2E2CB5A98DA665F2AB82A9FD01FB18C2337F845761B0C163F690ED65F3B94677",
+    "copyright": "Copyright (c) 2012, Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Names 'Sacramento'",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Sacramento",
+    "displayName": "Sacramento 手写",
+    "language": "en",
+    "style": "handwriting",
+    "styleLabel": "优雅英文手写",
+    "family": "Signature Studio SM",
+    "sampleText": "Vivian",
+    "fallback": [
+      "mashanzheng"
+    ],
+    "format": "woff2",
+    "license": "OFL-1.1"
+  },
+  {
+    "id": "greatvibes",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/greatvibes/GreatVibes-Regular.ttf",
+    "sourceSha256": "8D509802186F1B51572531ECF313E8098F9A5BFDFACA93F0C9B34467F9982D15",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/greatvibes/OFL.txt",
+    "licenseSha256": "61093A21F5E63DEDF54222B3C09997E54C0FE43E3851D21386E02DDCBC246D49",
+    "copyright": "Copyright 2015 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Great Vibes",
+    "displayName": "Great Vibes 花体",
+    "language": "en",
+    "style": "calligraphy",
+    "styleLabel": "古典英文花体",
+    "family": "Signature Studio GV",
+    "sampleText": "Vivian",
+    "fallback": [
+      "mashanzheng"
+    ],
+    "format": "woff2",
+    "license": "OFL-1.1"
+  },
+  {
+    "id": "allura",
+    "source": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/allura/Allura-Regular.ttf",
+    "sourceSha256": "9C142B2E515832C0DFC4FF8B8EA18F40314943BF937B72E2B23C4661BAC14CC6",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/allura/OFL.txt",
+    "licenseSha256": "C8CB4C94A558B6CB82AC5DC981A73A0B8AEE35A5C52C8A7832FC0280C289AD49",
+    "copyright": "Copyright 2010 The Allura Project Authors (https://github.com/googlefonts/allura)",
+    "commit": "c30b221beb0c1da59d563feb91ec8656a1fa972a",
+    "name": "Allura",
+    "displayName": "Allura 签名",
+    "language": "en",
+    "style": "cursive",
+    "styleLabel": "流畅英文签名",
+    "family": "Signature Studio AL",
+    "sampleText": "Vivian",
+    "fallback": [
+      "mashanzheng"
+    ],
+    "format": "woff2",
+    "license": "OFL-1.1"
   }
 ]

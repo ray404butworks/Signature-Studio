@@ -8,12 +8,12 @@ const coverage = new WeakMap<StaticFont,Set<string>>();
 export const getStaticFont = (id:string) => byId.get(id);
 export const isStaticFont = (id:string) => byId.has(id);
 export const systemFontFamily = '"Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif';
-export function supportsText(font:StaticFont,text:string):boolean {
+export function supportsText(font:StaticFont,text:string,characterCoverage:string):boolean {
   let characters=coverage.get(font);
-  if(!characters){characters=new Set(font.coverage);coverage.set(font,characters);}
+  if(!characters){characters=new Set(characterCoverage);coverage.set(font,characters);}
   return [...text].every(char=>/\s/u.test(char)||characters.has(char));
 }
-export function textFallbacks(font:StaticFont,text:string):StaticFont[] {
-  if(supportsText(font,text))return [];
+export function textFallbacks(font:StaticFont,text:string,characterCoverage:string):StaticFont[] {
+  if(supportsText(font,text,characterCoverage))return [];
   return font.fallback.map(getStaticFont).filter((item):item is StaticFont=>!!item);
 }

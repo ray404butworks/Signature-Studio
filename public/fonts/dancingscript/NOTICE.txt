@@ -1,7 +1,10 @@
 Copyright 2016 The Dancing Script Project Authors (https://github.com/googlefonts/DancingScript), with Reserved Font Name 'Dancing Script'.
 
+Original font copyright metadata:
+Copyright 2016 The Dancing Script Project Authors (https://github.com/googlefonts/DancingScript), with Reserved Font Name "Dancing Script".
+
 Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/dancingscript/DancingScript%5Bwght%5D.ttf
 License: SIL OFL 1.1, see OFL.txt.
-Derived WOFF2 names: Signature Studio DS / Signature Studio DS Sample.
+Derived internal names: Signature Studio DS / Signature Studio DS Sample.
 Weight instantiated at 400 where applicable. Full font retains upstream cmap.
 Sample subset contains only: Vivian

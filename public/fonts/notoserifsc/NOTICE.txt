@@ -1,0 +1,10 @@
+Copyright 2012 Google Inc. All Rights Reserved.
+
+Original font copyright metadata:
+(c) 2017-2024 Adobe (http://www.adobe.com/).
+
+Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf
+License: SIL OFL 1.1, see OFL.txt.
+Derived internal names: Signature Studio NSC / Signature Studio NSC Sample.
+Weight instantiated at 400 where applicable. Full font retains upstream cmap.
+Sample subset contains only: 林雨晴

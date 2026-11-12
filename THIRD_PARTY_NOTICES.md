@@ -1,5 +1,11 @@
 # 第三方许可
 
+## 扩展字体（Phase 03）
+
+新增 LXGW WenKai、Noto Serif SC、ZCOOL XiaoWei、Sacramento、Great Vibes、Allura，均为 SIL OFL 1.1。霞鹜文楷来自作者 `lxgw/LxgwWenKai` 官方仓库，其余来自 Google Fonts 官方仓库。精确提交、原始/衍生哈希、字体内版权及许可文件见 `assets/fonts/static-sources.json` 和 `public/fonts/catalog.json`，逐款说明见 [FONT_LIBRARY.md](FONT_LIBRARY.md)。
+
+字体可商用、网页嵌入并随 Android App 内置/重新分发，须保留版权与 OFL，字体本身仍按 OFL 分发，不得单独出售。LXGW 与 Sacramento 的保留名称均避开，衍生内部名称分别为 `Signature Studio WK` 与 `Signature Studio SM`。保留霞鹜文楷的 Klee 来源版权和附加许可原文，同时保留 Noto/Great Vibes 等字体文件与许可中不同的版权记录。所有字体保留原字符覆盖；菜单字样子集只作选项预览。
+
 ## 静态签名字体（Phase 02）
 
 Ma Shan Zheng、Long Cang、Zhi Mang Xing、Caveat、Dancing Script、Pacifico 来自 Google Fonts 官方仓库，均为 SIL OFL 1.1。各字体的 `OFL.txt` 和 `NOTICE.txt` 位于 `public/fonts/<id>/`，会随网站构建一同分发。精确来源提交、原文件 SHA-256、衍生文件 SHA-256、版权声明见 `public/fonts/catalog.json`。

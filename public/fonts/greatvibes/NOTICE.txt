@@ -1,0 +1,10 @@
+Copyright 2015 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)
+
+Original font copyright metadata:
+Copyright 2010 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)
+
+Source: https://raw.githubusercontent.com/google/fonts/c30b221beb0c1da59d563feb91ec8656a1fa972a/ofl/greatvibes/GreatVibes-Regular.ttf
+License: SIL OFL 1.1, see OFL.txt.
+Derived internal names: Signature Studio GV / Signature Studio GV Sample.
+Weight instantiated at 400 where applicable. Full font retains upstream cmap.
+Sample subset contains only: Vivian

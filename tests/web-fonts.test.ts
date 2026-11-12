@@ -8,20 +8,25 @@ import {checkExportSupport,exportVideo} from '../web/export';
 import {fitStaticText} from '../web/static-renderer';
 import {loadFont,loadTextFont} from '../web/font-loader';
 
-test('six licensed local WOFF2 resources match provenance hashes and preserve test-name coverage',()=>{
-  assert.equal(staticFonts.length,6);assert.equal(new Set(staticFonts.map(font=>font.id)).size,6);
+const coverageOf=(font:typeof staticFonts[number]):string=>JSON.parse(readFileSync(`public/${font.coverageResource}`,'utf8'));
+test('twelve licensed local WOFF2 resources match provenance hashes and preserve test-name coverage',()=>{
+  assert.equal(staticFonts.length,12);assert.equal(new Set(staticFonts.map(font=>font.id)).size,12);
   for(const font of staticFonts){
     const full=readFileSync(`public/${font.resource}`),sample=readFileSync(`public/${font.sampleResource}`);
     assert.equal(full.toString('ascii',0,4),'wOF2');assert.equal(createHash('sha256').update(full).digest('hex'),font.sha256);
     assert.equal(createHash('sha256').update(sample).digest('hex'),font.sampleSha256);
-    assert.match(readFileSync(`public/${font.licenseFile}`,'utf8'),/SIL Open Font License, Version 1.1/);
-    assert.match(font.source,/raw.githubusercontent.com\/google\/fonts\/[0-9a-f]{40}\//);
+    assert.match(readFileSync(`public/${font.licenseFile}`,'utf8'),/SIL Open Font License,\s+Version 1.1/);
+    assert.match(font.source,/raw.githubusercontent.com\/(google\/fonts|lxgw\/LxgwWenKai)\/[0-9a-f]{40}\//);
+    assert.equal(createHash('sha256').update(readFileSync(`public/${font.coverageResource}`)).digest('hex'),font.coverageSha256);
+    assert.equal(createHash('sha256').update(readFileSync(`public/${font.licenseFile}`)).digest('hex'),font.licenseSha256.toLowerCase());
+    assert.ok(font.displayName&&font.languages.length&&font.format==='woff2');
+    assert.ok(Object.values(font.permissions).every(Boolean));
     assert.ok(existsSync(`public/fonts/${font.id}/NOTICE.txt`));
-    for(const text of font.language==='zh'?['林雨晴','陈思远','张晓月']:['Ray','Vivian','Alexander'])assert.ok(supportsText(font,text),`${font.name}: ${text}`);
+    for(const text of font.language==='zh'?['林雨晴','陈思远','张晓月']:['Ray','Vivian','Alexander'])assert.ok(supportsText(font,text,coverageOf(font)),`${font.name}: ${text}`);
   }
-  assert.ok(staticFonts.reduce((sum,font)=>sum+font.sampleBytes,0)<20000);
-  assert.deepEqual(textFallbacks(getStaticFont('caveat')!,'林雨晴 Yuqing Lin').map(font=>font.id),['mashanzheng']);
-  assert.deepEqual(textFallbacks(getStaticFont('caveat')!,'Vivian'),[]);
+  assert.ok(staticFonts.reduce((sum,font)=>sum+font.sampleBytes,0)<45000);
+  assert.deepEqual(textFallbacks(getStaticFont('caveat')!,'林雨晴 Yuqing Lin',coverageOf(getStaticFont('caveat')!)).map(font=>font.id),['mashanzheng']);
+  assert.deepEqual(textFallbacks(getStaticFont('caveat')!,'Vivian',coverageOf(getStaticFont('caveat')!)),[]);
 });
 
 test('static Chinese and mixed designs survive storage without changing legacy TYX validation',()=>{
@@ -53,14 +58,40 @@ test('ink bounds and all artboard ratios constrain long text and extreme saved p
 });
 
 test('font loads share a request, failures fall back and a later load can retry',async()=>{
-  const oldFont=globalThis.FontFace,oldDocument=globalThis.document;
-  let attempts=0,adds=0,fail=false;
+  const oldFont=globalThis.FontFace,oldDocument=globalThis.document,oldFetch=globalThis.fetch;
+  let attempts=0,adds=0,fail=false,coverageFetches=0;
   class FakeFace {constructor(..._args:unknown[]){} async load(){attempts++;if(fail)throw new Error('404');return this;}}
   Object.defineProperty(globalThis,'FontFace',{value:FakeFace,configurable:true,writable:true});
   Object.defineProperty(globalThis,'document',{value:{fonts:{add:()=>{adds++;}}},configurable:true,writable:true});
+  globalThis.fetch=async()=>{coverageFetches++;return new Response(JSON.stringify(coverageOf(getStaticFont('pacifico')!)),{headers:{'Content-Type':'application/json'}});};
   try{
     const font=getStaticFont('longcang')!;await Promise.all([loadFont(font),loadFont(font)]);assert.equal(attempts,1);assert.equal(adds,1);
     fail=true;const result=await loadTextFont('pacifico','Vivian');assert.equal(result.failed,true);assert.match(result.family,/sans-serif/);
     fail=false;assert.equal((await loadTextFont('pacifico','Vivian')).failed,false);assert.equal(attempts,3);
-  }finally{Object.defineProperty(globalThis,'FontFace',{value:oldFont,configurable:true,writable:true});Object.defineProperty(globalThis,'document',{value:oldDocument,configurable:true,writable:true});}
+    await loadTextFont('pacifico','Vivian');assert.equal(attempts,3);assert.equal(coverageFetches,1);
+  }finally{globalThis.fetch=oldFetch;Object.defineProperty(globalThis,'FontFace',{value:oldFont,configurable:true,writable:true});Object.defineProperty(globalThis,'document',{value:oldDocument,configurable:true,writable:true});}
+});
+
+test('every registered font and source is maintained by one config entry and persists independently',()=>{
+  const sources=JSON.parse(readFileSync('assets/fonts/static-sources.json','utf8'));
+  assert.deepEqual(sources.map((item:{id:string})=>item.id),staticFonts.map(font=>font.id));
+  for(const font of staticFonts){
+    const config=defaultWebConfig();config.mode='single';config.people[0].font.family=font.id;config.people[0].name=font.language==='zh'?'林雨晴 Vivian':'Vivian';
+    let saved='';saveConfig({setItem:(_,value)=>{saved=value;}},config);
+    assert.equal(loadConfig({getItem:key=>key===STORAGE_KEY?saved:null}).config.people[0].font.family,font.id);
+  }
+});
+
+test('coverage request failures use system fonts and recover without downloading a loaded font again',async()=>{
+  const oldFont=globalThis.FontFace,oldDocument=globalThis.document,oldFetch=globalThis.fetch;
+  let loads=0;
+  class FakeFace {constructor(..._args:unknown[]){} async load(){loads++;return this;}}
+  Object.defineProperty(globalThis,'FontFace',{value:FakeFace,configurable:true,writable:true});
+  Object.defineProperty(globalThis,'document',{value:{fonts:{add:()=>{}}},configurable:true,writable:true});
+  try{
+    globalThis.fetch=async()=>new Response('',{status:404});
+    const failed=await loadTextFont('allura','Vivian');assert.equal(failed.failed,true);assert.match(failed.family,/sans-serif/);
+    globalThis.fetch=async()=>new Response(JSON.stringify(coverageOf(getStaticFont('allura')!)));
+    assert.equal((await loadTextFont('allura','Vivian')).failed,false);assert.equal(loads,1);
+  }finally{globalThis.fetch=oldFetch;Object.defineProperty(globalThis,'FontFace',{value:oldFont,configurable:true,writable:true});Object.defineProperty(globalThis,'document',{value:oldDocument,configurable:true,writable:true});}
 });

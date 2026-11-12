@@ -1,0 +1,2 @@
+# Preserve original license bytes and their recorded hashes across Windows clones.
+public/fonts/*/OFL.txt -text
